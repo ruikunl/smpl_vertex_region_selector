@@ -1,21 +1,29 @@
-# smpl_vertex_region_selector
+# smpl_vertex_region_selector: DensePose CSE Visualizer and SMPL Vertex ID Inspector
 
 [中文](#中文) | [English](#english)
+
+**DensePose CSE visualizer, SMPL/smpl_27554 vertex ID inspector, and human body region-map editor.**
 
 ![public demo front](assets/demo_reference/public/tri_views/front.png)
 
 ## 中文
 
-`smpl_vertex_region_selector` 是一个面向 DensePose CSE `smpl_27554` 模板空间的跨平台
-vertex region 选择和可视化工具。它帮助你理解 `0..27553` 这些 vertex ID 在人体表面上的位置，
-并按自己的业务定义导出腹部、背部、大腿、小腿、手臂等 candidate vertex ID 列表。
+`smpl_vertex_region_selector` 是一个面向 DensePose CSE、SMPL / `smpl_27554` vertex ID 和人体
+surface mapping 的跨平台可视化工具。它不仅可以选择 body region，还可以检查 CSE `vertex_map`
+输出、查看 2D 人体像素如何映射到 3D 人体表面、理解 `0..27553` 这些 vertex ID 在人体上的位置，
+并导出腹部、背部、大腿、小腿、手臂等 candidate vertex ID 列表。
 
-它适合做：
+核心能力：
 
-- DensePose CSE 输出检查：载入 `vertex_map.npz`，看 2D 人体像素对应哪些 3D template vertex。
-- 人工定义模板 region：在 3D/2D 视图中选择 vertex，导出 JSON/CSV/TXT。
-- 预标注 pipeline 前置工具：把一次性确认好的 template region 接到 parsing、mask、occlusion 等规则里。
-- 公开教学 demo：不用下载 SMPL，也可以用仓库内置 demo assets 试完整 UI 和导出流程。
+- **DensePose CSE 可视化**：载入 `vertex_map.npz`，看每个 2D 人体像素对应哪些 3D template vertex。
+- **SMPL / smpl_27554 vertex inspector**：输入或导入 vertex ID，在 3D mesh 和 2D tri-view 中同步高亮。
+- **image-to-surface mapping 检查**：加载图片、mask 或像素点，反查它们对应的 `smpl_27554` vertex 集合。
+- **人体部位 region map 编辑**：在 3D/2D 视图中选择 vertex，导出 JSON/CSV/TXT。
+- **预标注 pipeline 辅助**：把一次性确认好的 template region 接到 parsing、mask、occlusion 等规则里。
+- **公开教学 demo**：不用下载 SMPL，也可以用仓库内置 MakeHuman demo assets 和 CSE examples 试完整 UI。
+
+常见搜索关键词：DensePose CSE visualizer, DensePose vertex map viewer, SMPL vertex ID inspector,
+`smpl_27554` viewer, human mesh vertex annotation tool, body surface region map editor.
 
 它不做：
 
@@ -237,6 +245,7 @@ QT_QPA_PLATFORM=offscreen smpl-region-selector --smoke-test
 - [DensePose CSE vertex maps](docs/cse_vertex_map.md)
 - [Desktop app workflow](docs/desktop_app.md)
 - [Asset layout](docs/assets.md)
+- [Project discoverability](docs/discoverability.md)
 - [SMPL/DensePose alignment](docs/alignment.md)
 - [Legal asset boundaries](docs/legal_assets.md)
 - [Region selection workflow](docs/region_selection_workflow.md)
@@ -252,10 +261,10 @@ models and datasets keep their own licenses and should remain local unless you h
 
 ## English
 
-`smpl_vertex_region_selector` is a cross-platform desktop tool for selecting and inspecting DensePose CSE
-`smpl_27554` vertex regions. It helps users understand where fixed template vertex IDs live on the body surface,
-define custom body-part candidate regions, and inspect how image pixels map back to those IDs through CSE
-`vertex_map.npz` outputs.
+`smpl_vertex_region_selector` is a cross-platform desktop tool for visualizing DensePose CSE outputs, inspecting
+SMPL / `smpl_27554` vertex IDs, checking image-to-surface mappings, and editing reusable human body region maps.
+It helps users understand where fixed template vertex IDs live on the body surface and how 2D image pixels map back
+to those IDs through CSE `vertex_map.npz` outputs.
 
 ### Install
 
@@ -312,10 +321,14 @@ python -m pip install -e .
 
 ### What It Does
 
-- Inspect DensePose CSE outputs by loading `vertex_map.npz`.
-- Select reusable template vertex regions in linked 3D and 2D views.
+- Visualize DensePose CSE outputs by loading `vertex_map.npz`.
+- Inspect SMPL / `smpl_27554` vertex ID correspondences in linked 3D and 2D views.
+- Select reusable template vertex regions for abdomen, back, thighs, calves, arms, and custom body parts.
 - Import typed vertex IDs, region maps, CSE maps, source images, masks, and point CSVs.
 - Export region bundles as JSON, CSV, and one TXT file per region.
+
+Search keywords: DensePose CSE visualizer, DensePose vertex map viewer, SMPL vertex ID inspector,
+`smpl_27554` viewer, human mesh vertex annotation tool, body surface region map editor.
 
 ### Bundled Examples
 

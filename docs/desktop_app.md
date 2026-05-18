@@ -2,7 +2,9 @@
 
 ## 中文
 
-`smpl-region-selector` 是跨平台 Python 桌面入口，用于完成 `smpl_27554` vertex region 选择。
+`smpl-region-selector` 是跨平台 Python 桌面入口，用于可视化 DensePose CSE `vertex_map`、
+检查 SMPL / `smpl_27554` vertex ID 对应关系、调试 2D image-to-3D surface 映射，并编辑可复用的人体
+region map。
 
 安装：
 
@@ -80,11 +82,13 @@ front/back/left/right 的 2D template reference PNG 可能带 ribs/pelvis/navel 
 
 ## English
 
-`smpl-region-selector` is the cross-platform Python desktop app. It keeps the
-`smpl_27554` point cloud as the authoritative selectable object and treats body
-meshes as aligned only when they have exactly 27,554 vertices. Otherwise, meshes
-are visual references and their local vertex IDs are never exported as DensePose
-CSE IDs.
+`smpl-region-selector` is the cross-platform Python desktop app for visualizing
+DensePose CSE vertex maps, inspecting SMPL / `smpl_27554` vertex IDs, debugging
+2D image-to-3D surface mappings, and editing reusable body region maps. It keeps
+the `smpl_27554` point cloud as the authoritative selectable object and treats
+body meshes as aligned only when they have exactly 27,554 vertices. Otherwise,
+meshes are visual references and their local vertex IDs are never exported as
+DensePose CSE IDs.
 
 The app loads assets in this order: `assets/processed/alignment/` first,
 `assets/demo_reference/public/` second, and ignored
