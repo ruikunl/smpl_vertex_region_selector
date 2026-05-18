@@ -33,7 +33,7 @@ class DemoAssetsTest(unittest.TestCase):
         self.assertIn("no SMPL model", report.get("license", ""))
         self.assertIn("DensePose raw asset", report.get("license", ""))
         self.assertIn("private dataset image", report.get("license", ""))
-        self.assertEqual(report.get("target_mesh"), "MakeHuman female_generic proxy mesh (CC0-1.0)")
+        self.assertEqual(report.get("target_mesh"), "MakeHuman male_generic proxy mesh (CC0-1.0)")
 
         vertex_csv = public / "vertex_template_points.csv"
         with vertex_csv.open("r", encoding="utf-8") as handle:

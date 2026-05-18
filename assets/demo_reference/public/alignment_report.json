@@ -1,14 +1,14 @@
 {
   "status": "makehuman_cc0_smpl_projected_demo",
-  "message": "Public demo bundle using a MakeHuman CC0 target mesh with smpl_27554 vertex placement projected from a local reference alignment. Generation code and local source alignment are not included.",
+  "message": "Public demo bundle using a MakeHuman CC0 male target mesh with smpl_27554 vertex placement projected from a local reference alignment. Generation code and local source alignment are not included.",
   "vertex_count": 27554,
   "source_alignment": "local smpl_27554 reference alignment (not redistributed)",
-  "target_mesh": "MakeHuman female_generic proxy mesh (CC0-1.0)",
+  "target_mesh": "MakeHuman male_generic proxy mesh (CC0-1.0)",
   "target_mesh_meta": {
-    "url": "https://raw.githubusercontent.com/makehumancommunity/makehuman-assets/master/base/proxymeshes/female_generic/female_generic.obj",
+    "url": "https://raw.githubusercontent.com/makehumancommunity/makehuman-assets/master/base/proxymeshes/male_generic/male_generic.obj",
     "license": "CC0-1.0",
-    "source": "makehumancommunity/makehuman-assets base/proxymeshes/female_generic",
-    "name": "female_generic"
+    "source": "makehumancommunity/makehuman-assets base/proxymeshes/male_generic",
+    "name": "male_generic"
   },
   "projection_method": "body_part_bbox_align_then_open3d_closest_surface",
   "alignment_info": {
@@ -27,39 +27,39 @@
       "right_lower_leg": 1487
     },
     "target_vertex_counts": {
-      "head": 5424,
-      "torso": 1728,
-      "left_upper_arm": 436,
-      "right_upper_arm": 436,
-      "left_lower_arm": 1249,
-      "right_lower_arm": 1249,
-      "left_hand": 800,
-      "right_hand": 800,
-      "left_upper_leg": 451,
-      "right_upper_leg": 451,
-      "left_lower_leg": 1556,
-      "right_lower_leg": 1556
+      "head": 4982,
+      "torso": 1550,
+      "left_upper_arm": 293,
+      "right_upper_arm": 293,
+      "left_lower_arm": 207,
+      "right_lower_arm": 207,
+      "left_hand": 1850,
+      "right_hand": 1851,
+      "left_upper_leg": 381,
+      "right_upper_leg": 381,
+      "left_lower_leg": 1398,
+      "right_lower_leg": 1398
     },
     "target_face_counts": {
-      "head": 9472,
-      "torso": 3112,
-      "left_upper_arm": 810,
-      "right_upper_arm": 810,
-      "left_lower_arm": 2102,
-      "right_lower_arm": 2102,
-      "left_hand": 1368,
-      "right_hand": 1368,
-      "left_upper_leg": 798,
-      "right_upper_leg": 798,
-      "left_lower_leg": 2492,
-      "right_lower_leg": 2492
+      "head": 9546,
+      "torso": 2970,
+      "left_upper_arm": 570,
+      "right_upper_arm": 570,
+      "left_lower_arm": 382,
+      "right_lower_arm": 382,
+      "left_hand": 3248,
+      "right_hand": 3248,
+      "left_upper_leg": 728,
+      "right_upper_leg": 728,
+      "left_lower_leg": 2462,
+      "right_lower_leg": 2462
     },
     "part_alignment": {
       "head": {
         "mode": "part_faces",
         "query_count": 7875,
-        "target_vertex_count": 5424,
-        "target_face_count": 9472,
+        "target_vertex_count": 4982,
+        "target_face_count": 9546,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -75,32 +75,32 @@
           },
           "target_bounds": {
             "min": [
-              -1.7798000574111938,
-              4.6631999015808105,
-              -0.6172000169754028
+              -2.184861898422241,
+              5.811241149902344,
+              -0.8003789782524109
             ],
             "max": [
-              1.7798000574111938,
-              7.864299774169922,
-              1.5896999835968018
+              2.184861898422241,
+              9.300299644470215,
+              1.760699987411499
             ]
           },
           "axis_scales": [
-            5.888774394989014,
-            8.124189376831055,
-            8.152865409851074
+            7.2289910316467285,
+            8.855010032653809,
+            9.461295127868652
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.12358812242746353,
-        "distance_p95": 0.27695372700691223,
-        "distance_max": 0.49142885208129883
+        "distance_mean": 0.09282238781452179,
+        "distance_p95": 0.2310744971036911,
+        "distance_max": 0.3461608588695526
       },
       "torso": {
         "mode": "part_faces",
         "query_count": 5826,
-        "target_vertex_count": 1728,
-        "target_face_count": 3112,
+        "target_vertex_count": 1550,
+        "target_face_count": 2970,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -116,32 +116,32 @@
           },
           "target_bounds": {
             "min": [
-              -1.7621999979019165,
-              -0.7972999811172485,
-              -0.9232000112533569
+              -2.0373001098632812,
+              -0.13729999959468842,
+              -0.9718790054321289
             ],
             "max": [
-              1.7621999979019165,
-              4.647299766540527,
-              1.5997999906539917
+              2.0373001098632812,
+              5.799193859100342,
+              1.5132420063018799
             ]
           },
           "axis_scales": [
-            5.844818592071533,
-            8.685664176940918,
-            8.344178199768066
+            6.75726318359375,
+            9.470373153686523,
+            8.218903541564941
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.2178114801645279,
-        "distance_p95": 0.46926313638687134,
-        "distance_max": 0.7860533595085144
+        "distance_mean": 0.21628639101982117,
+        "distance_p95": 0.5367530584335327,
+        "distance_max": 0.7490053176879883
       },
       "left_upper_arm": {
         "mode": "part_faces",
         "query_count": 1027,
-        "target_vertex_count": 436,
-        "target_face_count": 810,
+        "target_vertex_count": 293,
+        "target_face_count": 570,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -157,20 +157,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -1.9288386106491089,
-              -0.4698338508605957,
-              -0.4389011859893799
+              -1.7530690431594849,
+              -0.5800256133079529,
+              -0.4970063865184784
             ],
             "max": [
-              1.7990583181381226,
-              0.8306148648262024,
-              0.3776252269744873
+              1.3775463104248047,
+              0.7623875141143799,
+              0.3938910663127899
             ]
           },
           "axis_scales": [
-            12.430194854736328,
-            12.263298988342285,
-            8.368258476257324
+            10.43863582611084,
+            12.659027099609375,
+            9.130457878112793
           ],
           "source_basis": [
             [
@@ -191,32 +191,32 @@
           ],
           "target_basis": [
             [
-              -0.6194300651550293,
-              -0.7653301358222961,
-              0.17486028373241425
+              -0.641052782535553,
+              -0.7631017565727234,
+              0.08201868832111359
             ],
             [
-              -0.18132229149341583,
-              0.3561895191669464,
-              0.916652262210846
+              -0.23702289164066315,
+              0.2984814941883087,
+              0.9245155453681946
             ],
             [
-              -0.763824999332428,
-              0.536095917224884,
-              -0.35940590500831604
+              -0.72998046875,
+              0.5732229351997375,
+              -0.3722149729728699
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.14559662342071533,
-        "distance_p95": 0.4120415151119232,
-        "distance_max": 0.5987570881843567
+        "distance_mean": 0.12543104588985443,
+        "distance_p95": 0.3379612863063812,
+        "distance_max": 0.7155643701553345
       },
       "right_upper_arm": {
         "mode": "part_faces",
         "query_count": 1020,
-        "target_vertex_count": 436,
-        "target_face_count": 810,
+        "target_vertex_count": 293,
+        "target_face_count": 570,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -232,20 +232,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -1.9288386106491089,
-              -0.4698338508605957,
-              -0.3776252269744873
+              -1.7530690431594849,
+              -0.5800256133079529,
+              -0.3938910663127899
             ],
             "max": [
-              1.7990583181381226,
-              0.8306148648262024,
-              0.4389011859893799
+              1.3775463104248047,
+              0.7623875141143799,
+              0.4970063865184784
             ]
           },
           "axis_scales": [
-            12.368157386779785,
-            12.107536315917969,
-            8.5799560546875
+            10.386537551879883,
+            12.498237609863281,
+            9.361437797546387
           ],
           "source_basis": [
             [
@@ -266,32 +266,32 @@
           ],
           "target_basis": [
             [
-              0.6194300651550293,
-              -0.7653301358222961,
-              0.17486028373241425
+              0.641052782535553,
+              -0.7631017565727234,
+              0.08201868832111359
             ],
             [
-              0.18132229149341583,
-              0.3561895191669464,
-              0.916652262210846
+              0.23702289164066315,
+              0.2984814941883087,
+              0.9245155453681946
             ],
             [
-              -0.763824999332428,
-              -0.536095917224884,
-              0.35940590500831604
+              -0.72998046875,
+              -0.5732229351997375,
+              0.3722149729728699
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.14317560195922852,
-        "distance_p95": 0.4127877950668335,
-        "distance_max": 0.6178475022315979
+        "distance_mean": 0.12495867908000946,
+        "distance_p95": 0.33014583587646484,
+        "distance_max": 0.6879417300224304
       },
       "left_lower_arm": {
         "mode": "part_faces",
         "query_count": 1537,
-        "target_vertex_count": 1249,
-        "target_face_count": 2102,
+        "target_vertex_count": 207,
+        "target_face_count": 382,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -307,20 +307,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -1.9651156663894653,
-              -0.6305301189422607,
-              -0.2728104293346405
+              -1.7172144651412964,
+              -0.42593881487846375,
+              -0.4410237669944763
             ],
             "max": [
-              0.7956311702728271,
-              0.5879369974136353,
-              0.2934826910495758
+              1.5256876945495605,
+              0.3854808211326599,
+              0.3244611620903015
             ]
           },
           "axis_scales": [
-            11.251097679138184,
-            7.83997106552124,
-            7.616992950439453
+            13.216064453125,
+            5.220909595489502,
+            10.296246528625488
           ],
           "source_basis": [
             [
@@ -341,32 +341,32 @@
           ],
           "target_basis": [
             [
-              -0.28150632977485657,
-              -0.5188544988632202,
-              0.8071828484535217
+              -0.5429564714431763,
+              -0.3293183445930481,
+              0.7724944353103638
             ],
             [
-              -0.8020099401473999,
-              -0.3346104621887207,
-              -0.49478879570961
+              -0.8252021074295044,
+              0.03868400678038597,
+              -0.5635114312171936
             ],
             [
-              0.5268152356147766,
-              -0.7866548895835876,
-              -0.32193151116371155
+              0.1556914895772934,
+              -0.9434261918067932,
+              -0.29275792837142944
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.08895882219076157,
-        "distance_p95": 0.34395831823349,
-        "distance_max": 0.4649589955806732
+        "distance_mean": 0.13274900615215302,
+        "distance_p95": 0.2817782461643219,
+        "distance_max": 0.40566709637641907
       },
       "right_lower_arm": {
         "mode": "part_faces",
         "query_count": 1548,
-        "target_vertex_count": 1249,
-        "target_face_count": 2102,
+        "target_vertex_count": 207,
+        "target_face_count": 382,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -382,20 +382,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -1.9651156663894653,
-              -0.5879369974136353,
-              -0.2728104293346405
+              -1.7172144651412964,
+              -0.42593881487846375,
+              -0.3244611620903015
             ],
             "max": [
-              0.7956311702728271,
-              0.6305301189422607,
-              0.2934826910495758
+              1.5256876945495605,
+              0.3854808211326599,
+              0.4410237669944763
             ]
           },
           "axis_scales": [
-            11.768623352050781,
-            7.826966285705566,
-            7.670553207397461
+            13.823974609375,
+            5.212248802185059,
+            10.368645668029785
           ],
           "source_basis": [
             [
@@ -416,32 +416,32 @@
           ],
           "target_basis": [
             [
-              0.28150632977485657,
-              -0.5188544988632202,
-              0.8071828484535217
+              0.5429564714431763,
+              -0.3293183445930481,
+              0.7724944353103638
             ],
             [
-              -0.8020099401473999,
-              0.3346104621887207,
-              0.49478879570961
+              0.8252021074295044,
+              0.03868400678038597,
+              -0.5635114312171936
             ],
             [
-              -0.5268152356147766,
-              -0.7866548895835876,
-              -0.32193151116371155
+              0.1556914895772934,
+              0.9434261918067932,
+              0.29275792837142944
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.12092598527669907,
-        "distance_p95": 0.2710133194923401,
-        "distance_max": 0.39906367659568787
+        "distance_mean": 0.1362561136484146,
+        "distance_p95": 0.2814084589481354,
+        "distance_max": 0.41922926902770996
       },
       "left_hand": {
         "mode": "part_faces",
         "query_count": 1972,
-        "target_vertex_count": 800,
-        "target_face_count": 1368,
+        "target_vertex_count": 1850,
+        "target_face_count": 3248,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -457,20 +457,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -3.8461782932281494,
-              -0.3937249481678009,
-              -0.47318387031555176
+              -1.6921708583831787,
+              -0.6690906882286072,
+              -0.31748878955841064
             ],
             "max": [
-              0.29673096537590027,
-              0.8898556232452393,
-              0.4565732777118683
+              0.7668908834457397,
+              0.8219860196113586,
+              0.32984262704849243
             ]
           },
           "axis_scales": [
-            23.431814193725586,
-            12.157764434814453,
-            21.35379981994629
+            13.908167839050293,
+            14.123117446899414,
+            14.867308616638184
           ],
           "source_basis": [
             [
@@ -491,32 +491,32 @@
           ],
           "target_basis": [
             [
-              -0.6905999183654785,
-              0.2816963195800781,
-              0.666122317314148
+              -0.5143006443977356,
+              -0.6578918099403381,
+              0.5501574277877808
             ],
             [
-              0.6553059220314026,
-              -0.14598645269870758,
-              0.7411222457885742
+              0.5186588764190674,
+              0.27228835225105286,
+              0.8104641437530518
             ],
             [
-              0.3060162365436554,
-              0.9483328461647034,
-              -0.08377903699874878
+              -0.6829991936683655,
+              0.7021662592887878,
+              0.20118334889411926
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.9547926783561707,
-        "distance_p95": 1.6374858617782593,
-        "distance_max": 1.7792778015136719
+        "distance_mean": 0.1763852834701538,
+        "distance_p95": 0.5447150468826294,
+        "distance_max": 0.6499375104904175
       },
       "right_hand": {
         "mode": "part_faces",
         "query_count": 1965,
-        "target_vertex_count": 800,
-        "target_face_count": 1368,
+        "target_vertex_count": 1851,
+        "target_face_count": 3248,
         "bbox_alignment": {
           "source_local_bounds": {
             "min": [
@@ -532,20 +532,20 @@
           },
           "target_local_bounds": {
             "min": [
-              -3.8461782932281494,
-              -0.3937249481678009,
-              -0.4565732777118683
+              -1.6918678283691406,
+              -0.6703552603721619,
+              -0.32986587285995483
             ],
             "max": [
-              0.29673096537590027,
-              0.8898556232452393,
-              0.47318387031555176
+              0.7665022015571594,
+              0.8217182755470276,
+              0.3176586925983429
             ]
           },
           "axis_scales": [
-            23.773910522460938,
-            12.64880657196045,
-            24.562625885009766
+            14.107253074645996,
+            14.703362464904785,
+            17.10651397705078
           ],
           "source_basis": [
             [
@@ -566,32 +566,32 @@
           ],
           "target_basis": [
             [
-              0.6905999183654785,
-              0.2816963195800781,
-              0.666122317314148
+              0.5147565007209778,
+              -0.6582753658294678,
+              0.5492715835571289
             ],
             [
-              -0.6553059220314026,
-              -0.14598645269870758,
-              0.7411222457885742
+              -0.5179425477981567,
+              0.27176785469055176,
+              0.8110966682434082
             ],
             [
-              0.3060162365436554,
-              -0.9483328461647034,
-              0.08377903699874878
+              -0.6831993460655212,
+              -0.7020084261894226,
+              -0.20105454325675964
             ]
           ],
           "method": "pca_bbox_anisotropic"
         },
-        "distance_mean": 0.9786790013313293,
-        "distance_p95": 1.5721315145492554,
-        "distance_max": 1.8290233612060547
+        "distance_mean": 0.142466738820076,
+        "distance_p95": 0.3157961964607239,
+        "distance_max": 0.5167833566665649
       },
       "left_upper_leg": {
         "mode": "part_faces",
         "query_count": 920,
-        "target_vertex_count": 451,
-        "target_face_count": 798,
+        "target_vertex_count": 381,
+        "target_face_count": 728,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -607,32 +607,32 @@
           },
           "target_bounds": {
             "min": [
-              -2.0332999229431152,
-              -4.632999897003174,
-              -0.4593999981880188
+              -2.328000068664551,
+              -4.316500186920166,
+              -0.6121000051498413
             ],
             "max": [
-              -0.06949999928474426,
-              -0.8084999918937683,
-              1.3592000007629395
+              -0.2037999927997589,
+              -0.14980000257492065,
+              1.2422000169754028
             ]
           },
           "axis_scales": [
-            10.712711334228516,
-            9.570526123046875,
-            8.47614860534668
+            11.587708473205566,
+            10.426856994628906,
+            8.642539978027344
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.11808909475803375,
-        "distance_p95": 0.32601118087768555,
-        "distance_max": 0.4975754916667938
+        "distance_mean": 0.1155107393860817,
+        "distance_p95": 0.32632976770401,
+        "distance_max": 0.4248749911785126
       },
       "right_upper_leg": {
         "mode": "part_faces",
         "query_count": 893,
-        "target_vertex_count": 451,
-        "target_face_count": 798,
+        "target_vertex_count": 381,
+        "target_face_count": 728,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -648,32 +648,32 @@
           },
           "target_bounds": {
             "min": [
-              0.06949999928474426,
-              -4.632999897003174,
-              -0.4593999981880188
+              0.2037999927997589,
+              -4.316500186920166,
+              -0.6121000051498413
             ],
             "max": [
-              2.0332999229431152,
-              -0.8084999918937683,
-              1.3592000007629395
+              2.328000068664551,
+              -0.14980000257492065,
+              1.2422000169754028
             ]
           },
           "axis_scales": [
-            11.222250938415527,
-            9.606955528259277,
-            8.389897346496582
+            12.138867378234863,
+            10.466546058654785,
+            8.554594993591309
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.13074329495429993,
-        "distance_p95": 0.34626710414886475,
-        "distance_max": 0.5234148502349854
+        "distance_mean": 0.1322605311870575,
+        "distance_p95": 0.36488521099090576,
+        "distance_max": 0.4607451558113098
       },
       "left_lower_leg": {
         "mode": "part_faces",
         "query_count": 1484,
-        "target_vertex_count": 1556,
-        "target_face_count": 2492,
+        "target_vertex_count": 1398,
+        "target_face_count": 2462,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -689,32 +689,32 @@
           },
           "target_bounds": {
             "min": [
-              -2.192699909210205,
-              -8.189900398254395,
-              -0.3912000060081482
+              -2.5053999423980713,
+              -8.180999755859375,
+              -0.5812000036239624
             ],
             "max": [
-              -1.0247999429702759,
-              -4.648499965667725,
-              2.001199960708618
+              -1.1368999481201172,
+              -4.345099925994873,
+              2.1816999912261963
             ]
           },
           "axis_scales": [
-            9.367000579833984,
-            9.599957466125488,
-            8.849244117736816
+            10.975889205932617,
+            10.39828109741211,
+            10.219685554504395
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.0792066678404808,
-        "distance_p95": 0.24278205633163452,
-        "distance_max": 0.3589184582233429
+        "distance_mean": 0.08457361161708832,
+        "distance_p95": 0.2592652440071106,
+        "distance_max": 0.3449859917163849
       },
       "right_lower_leg": {
         "mode": "part_faces",
         "query_count": 1487,
-        "target_vertex_count": 1556,
-        "target_face_count": 2492,
+        "target_vertex_count": 1398,
+        "target_face_count": 2462,
         "bbox_alignment": {
           "source_bounds": {
             "min": [
@@ -730,34 +730,34 @@
           },
           "target_bounds": {
             "min": [
-              1.0247999429702759,
-              -8.189900398254395,
-              -0.3912000060081482
+              1.1368999481201172,
+              -8.180999755859375,
+              -0.5812000036239624
             ],
             "max": [
-              2.192699909210205,
-              -4.648499965667725,
-              2.001199960708618
+              2.5053999423980713,
+              -4.345099925994873,
+              2.1816999912261963
             ]
           },
           "axis_scales": [
-            9.260663032531738,
-            9.634533882141113,
-            8.957198143005371
+            10.851286888122559,
+            10.435731887817383,
+            10.34435749053955
           ],
           "method": "bbox_anisotropic_xyz"
         },
-        "distance_mean": 0.0790574923157692,
-        "distance_p95": 0.24621431529521942,
-        "distance_max": 0.34618255496025085
+        "distance_mean": 0.08663743734359741,
+        "distance_p95": 0.2574995160102844,
+        "distance_max": 0.3657345175743103
       }
     }
   },
   "distance_stats": {
-    "mean": 0.25869813561439514,
-    "median": 0.13622093200683594,
-    "p95": 1.261794090270996,
-    "max": 1.8290233612060547
+    "mean": 0.1367783546447754,
+    "median": 0.10722862184047699,
+    "p95": 0.4014355540275574,
+    "max": 0.7490053176879883
   },
   "surface_proxy_obj": "assets/demo_reference/public/surface_proxy.obj",
   "smpl_27554_surface_points_obj": "assets/demo_reference/public/smpl_27554_surface_points.obj",
@@ -768,25 +768,25 @@
       "view": "front",
       "image": "assets/demo_reference/public/tri_views/front.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/front.vertex_id_map.npz",
-      "valid_pixels": 91454
+      "valid_pixels": 92354
     },
     {
       "view": "back",
       "image": "assets/demo_reference/public/tri_views/back.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/back.vertex_id_map.npz",
-      "valid_pixels": 91454
+      "valid_pixels": 92354
     },
     {
       "view": "left",
       "image": "assets/demo_reference/public/tri_views/left.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/left.vertex_id_map.npz",
-      "valid_pixels": 52799
+      "valid_pixels": 54765
     },
     {
       "view": "right",
       "image": "assets/demo_reference/public/tri_views/right.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/right.vertex_id_map.npz",
-      "valid_pixels": 52799
+      "valid_pixels": 54765
     }
   ],
   "view_specs": {
