@@ -14,12 +14,16 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[gui]"
 ```
 
+`.[gui]` 会安装桌面应用需要的 `PySide6`、`open3d`、`scipy` 和 `trimesh`。
+
 如果使用 requirements 文件：
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-gui.txt
 python -m pip install -e .
 ```
+
+`requirements.txt` 默认也指向完整 GUI 依赖；CLI-only 依赖在 `requirements-core.txt`。
 
 运行：
 
