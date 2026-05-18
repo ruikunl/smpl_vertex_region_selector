@@ -48,7 +48,7 @@ class GuiSmokeTest(unittest.TestCase):
             try:
                 window = MainWindow()
                 self.assertIsNotNone(window.alignment_assets)
-                self.assertEqual(window.alignment_assets.status, "demo_reference")
+                self.assertEqual(window.alignment_assets.status, "makehuman_cc0_smpl_projected_demo")
                 self.assertEqual(window.alignment_assets.root, Path("assets/demo_reference/public"))
                 window.close()
             finally:

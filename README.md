@@ -19,17 +19,13 @@ vertex ID 列表。
 
 - 不训练 DensePose。
 - 不自带官方 SMPL 模型、DensePose 权重或大体积 licensed mesh。
-- 不把 demo mannequin 宣称为真实 SMPL/DensePose 对齐资产。
+- 不把 public demo 宣称为官方 SMPL/DensePose 对齐资产。
 
 ## Preview
 
 Public demo tri-view reference:
 
 ![public demo front](assets/demo_reference/public/tri_views/front.png)
-
-Bundled CSE examples:
-
-![CSE examples](examples/cse/cse_contact_sheet.jpg)
 
 ## Install
 
@@ -109,16 +105,10 @@ region_map.csv
 vertex_ids/<region>.txt
 ```
 
-## Try the Bundled Examples
-
-The repository includes small AI-generated adult example images and lightweight CSE outputs:
+## Try the Bundled Example
 
 ```text
-examples/images/*.png
-examples/cse/vertex_maps/*.vertex_map.npz
-examples/cse/overlays/*.cse_vertex_overlay.jpg
-examples/cse/masks/*.foreground.png
-examples/cse/cse_contact_sheet.jpg
+assets/demo_reference/public/
 examples/region_map.example.json
 ```
 
@@ -126,23 +116,12 @@ Basic flow:
 
 1. Run `smpl-region-selector`.
 2. Import `examples/region_map.example.json`, or create a new region manually.
-3. Use `Load CSE Map` with one file from `examples/cse/vertex_maps/`.
-4. Use `Load CSE Image` with the matching image from `examples/images/`.
-5. Refine the highlighted selection with box/polygon tools or a mask.
-6. Click `Add Selected`.
-7. Export your region bundle.
+3. Use the MakeHuman CC0 public demo 3D/2D views to select vertices.
+4. Click `Add Selected`.
+5. Export your region bundle.
 
-Render an overlay preview:
-
-```bash
-smpl-preview-overlay \
-  --region-map outputs/manual_regions/region_map.json \
-  --vertex-map-dir examples/cse/vertex_maps \
-  --image-dir examples/images \
-  --output-dir outputs/region_preview \
-  --limit 12 \
-  --write-summary
-```
+The CSE/Image inspector still supports user-provided `.npz/.npy` vertex maps, source images, masks, and point CSVs.
+This repository no longer bundles AI-generated people images or precomputed CSE outputs.
 
 ## What Is a CSE `vertex_map`?
 
@@ -189,37 +168,21 @@ smpl-build-alignment \
 SMPL `.pkl`, DensePose raw `.mat/.pkl/.tar.gz`, and generated `assets/processed/alignment/` outputs
 are local-only and must not be redistributed from this repository.
 
-## Nicer Local Mesh Preview
-
-The public demo mannequin is intentionally license-safe and lightweight, not anatomically perfect. For a nicer local
-visual preview, project your local `smpl_27554` alignment onto a MakeHuman CC0 mesh:
-
-```bash
-smpl-project-alignment-to-mesh \
-  --target-mesh makehuman:female_generic \
-  --source-alignment assets/processed/alignment/smpl_27554_to_surface_map.npz \
-  --output-dir assets/demo_reference/generated/makehuman_smpl_projected
-
-smpl-region-selector --alignment-dir assets/demo_reference/generated/makehuman_smpl_projected
-```
-
-MakeHuman mesh assets are open, but the projected vertex placement is derived from your local alignment. The output
-stays ignored by default.
-
 ## Asset Policy
 
 This repository intentionally separates public code/demo assets from local licensed assets.
 
 Tracked public assets:
 
-- `assets/demo_reference/public/`: small procedural demo mesh, points, tri-view PNGs, and `vertex_id_map.npz`.
-- `examples/`: small AI-generated adult example images, lightweight CSE maps, masks, overlays, and manifests.
+- `assets/demo_reference/public/`: MakeHuman CC0 target mesh, `smpl_27554` point map, tri-view PNGs, and
+  `vertex_id_map.npz`.
+- `examples/region_map.example.json`: a tiny region-map schema example.
 
 Ignored local assets:
 
-- `assets/raw/`: local SMPL, DensePose, MakeHuman downloads, or other raw assets.
+- `assets/raw/`: local SMPL, DensePose, or other raw assets.
 - `assets/processed/`: real local alignment outputs.
-- `assets/demo_reference/generated/`: regenerated or projected local demo assets.
+- `assets/demo_reference/generated/`: optional local experiments.
 - `assets/public_examples/`: optional downloaded public dataset images.
 - `outputs/`: exports, previews, and experiments.
 
@@ -233,8 +196,6 @@ smpl-preview-overlay                  Render region overlays from CSE vertex map
 smpl-prepare-assets                   Normalize a vertex_template_points.csv
 smpl-build-alignment                  Build local DensePose/SMPL alignment assets
 smpl-install-local-assets             Extract local SMPL/UV zip files into ignored assets/raw/
-smpl-make-demo-assets                 Generate license-safe demo reference assets
-smpl-project-alignment-to-mesh        Project local smpl_27554 IDs onto an open target mesh
 smpl-fetch-public-examples            Download optional public images into ignored assets/public_examples/
 smpl-export-surface-preannotation     Convert region maps for a downstream preannotation pipeline
 ```
@@ -244,8 +205,8 @@ smpl-export-surface-preannotation     Convert region maps for a downstream prean
 ```text
 assets/demo_reference/public/     Committed demo assets
 docs/                             Concept and workflow docs
-examples/                         Small images and CSE outputs for trying the app
-scripts/                          Helper scripts for example manifests and CSE collection
+examples/                         Small region-map schema example
+scripts/                          Helper scripts
 src/smpl_vertex_region_selector/  Python package
 tests/                            Unit and smoke tests
 ```
@@ -281,14 +242,15 @@ the public repository.
 - [SMPL/DensePose alignment](docs/alignment.md)
 - [Legal asset boundaries](docs/legal_assets.md)
 - [Region selection workflow](docs/region_selection_workflow.md)
-- [Public example images](docs/public_examples.md)
+- [Public examples](docs/public_examples.md)
 - [Test plan](docs/test_plan.md)
 
 ## License
 
-Code is released under the MIT License. Public demo assets in `assets/demo_reference/public/` are generated by this
-tool for repository demos and contain no SMPL model, DensePose raw asset, or private dataset image. Third-party models
-and datasets keep their own licenses and should remain local unless you have explicit redistribution rights.
+Code is released under the MIT License. Public demo assets in `assets/demo_reference/public/` use a MakeHuman CC0
+target mesh plus `smpl_27554` vertex placement prepared for repository demos, and contain no SMPL model file,
+DensePose raw asset, AI-generated people image, or private dataset image. Third-party models and datasets keep their
+own licenses and should remain local unless you have explicit redistribution rights.
 
 ---
 
@@ -306,7 +268,7 @@ Highlights:
 - Typed or imported vertex ID sets.
 - CSE/Image inspector for `vertex_map.npz`, source images, masks, and point CSVs.
 - JSON/CSV/TXT region export.
-- License-safe public demo assets and lightweight examples.
+- MakeHuman CC0 public demo assets and lightweight examples.
 
 Quick start:
 

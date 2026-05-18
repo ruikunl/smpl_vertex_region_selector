@@ -59,8 +59,8 @@ class PrivacyGuardTest(unittest.TestCase):
         for path in [
             "assets/demo_reference/public/surface_proxy.obj",
             "assets/demo_reference/public/smpl_27554_to_surface_map.npz",
+            "assets/demo_reference/public/tri_views/front.png",
             "assets/demo_reference/public/tri_views/front.vertex_id_map.npz",
-            "examples/cse/vertex_maps/adult_clothed_full_body.vertex_map.npz",
         ]:
             self.assertFalse(ignored(path), f"{path} should be allowed")
 

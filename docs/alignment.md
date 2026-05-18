@@ -59,7 +59,7 @@ assets/processed/alignment/
 ```
 
 `vertex_id_map.npz` 是三视图选择的权威映射：背景是 `-1`，人体像素是 `smpl_27554`
-vertex id。AI 生成图可以作为视觉背景，但不能作为权威映射来源。
+vertex id。外部参考图可以作为视觉背景，但不能作为权威映射来源。
 渲染出来的 PNG 是彩色人体 reference，可能带 ribs/pelvis/navel guides（肋骨、骨盆、
 肚脐辅助线）。这些线只是帮助人眼定位躯干边界的 2D template reference lines，不是
 DensePose/CSE/SMPL 的模型输出；选择和导出仍然只依赖同名 `vertex_id_map.npz`。
@@ -77,30 +77,9 @@ smpl-region-selector
 ```
 
 fresh clone 已经包含 `assets/demo_reference/public/`；如果没有本地
-`assets/processed/alignment/`，GUI 会自动加载这套开源安全 demo。`demo_reference` 是合成人体 mannequin，
-适合教学和 CI；`surface_proxy_aligned` 才是本地 SMPL/DensePose 验证后用于 DensePose CSE
-预标注的映射层。开发者如需本地重生成 demo，使用 ignored 目录：
-
-```bash
-smpl-make-demo-assets --output-dir assets/demo_reference/generated
-```
-
-如果要解决默认 mannequin 太抽象的问题，可以把真实 `smpl_27554` ID 投影到 MakeHuman CC0 mesh：
-
-```bash
-smpl-project-alignment-to-mesh \
-  --target-mesh makehuman:female_generic \
-  --source-alignment assets/processed/alignment/smpl_27554_to_surface_map.npz \
-  --output-dir assets/demo_reference/generated/makehuman_smpl_projected
-```
-
-实现上先把 source/target 按几何规则粗分成 head/torso/左右上臂/左右前臂/左右上腿/左右小腿，
-再对每个部位独立投影。手臂使用 PCA 主轴 bbox 对齐，以适配 source 横向手臂和 MakeHuman 斜向
-下垂手臂的姿态差异；腿段使用世界坐标 bbox 对齐，因为 source/target 腿部都大致沿竖直方向。
-这样 vertex ID 保持真实 `smpl_27554` ID，显示位置落到更像人的开源 mesh 表面，同时能避免四肢
-被躯干最近点“吸走”。纯中心射线投影在四肢容易打到躯干，所以当前默认不是 naive radial ray；
-后续可以继续加 per-part ray refinement。
-生成结果仍然由本地 SMPL/DensePose alignment 推导出来，默认不提交。
+`assets/processed/alignment/`，GUI 会自动加载这套开源 demo。public demo 使用 MakeHuman CC0
+target mesh 和预制的 `smpl_27554` vertex placement，适合教学和 CI；`surface_proxy_aligned`
+才是本地 SMPL/DensePose 验证后用于 DensePose CSE 预标注的映射层。
 
 ## English
 
@@ -120,9 +99,7 @@ guide near the midpoint between those two landmarks.
 
 The preferred alignment source is DensePose `SMPL_subdiv.mat` plus
 `SMPL_SUBDIV_TRANSFORM.mat`, which gives a complete 27,554-vertex surface. Fresh
-clones include `assets/demo_reference/public/` for a license-safe synthetic
-mannequin demo. Use `smpl-install-local-assets` only with local files you have
-downloaded from <https://smpl.is.tue.mpg.de/> and are licensed to use; keep SMPL
-files, DensePose raw assets, and `assets/processed/alignment/` outputs local.
-Use `smpl-project-alignment-to-mesh` for a nicer local MakeHuman-based preview
-while preserving source `smpl_27554` IDs.
+clones include `assets/demo_reference/public/` for a MakeHuman CC0 public demo.
+Use `smpl-install-local-assets` only with local files you have downloaded from
+<https://smpl.is.tue.mpg.de/> and are licensed to use; keep SMPL files,
+DensePose raw assets, and `assets/processed/alignment/` outputs local.

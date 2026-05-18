@@ -331,10 +331,11 @@ class MainWindow(QMainWindow):
         default_csv = Path("assets/processed/vertex_template_points.csv")
         if default_csv.exists():
             self.set_vertex_table(default_csv)
-        processed_alignment, public_demo_alignment, demo_alignment = self.default_alignment_roots()
+        processed_alignment, public_demo_alignment, generated_alignment = self.default_alignment_roots()
         for root, label in [
             (processed_alignment, "Alignment"),
             (public_demo_alignment, "Public demo assets"),
+            (generated_alignment, "Generated local assets"),
         ]:
             if root.exists():
                 try:
@@ -342,18 +343,7 @@ class MainWindow(QMainWindow):
                     return
                 except Exception as exc:
                     self.statusBar().showMessage(f"{label} not loaded: {exc}")
-        if not demo_alignment.exists():
-            try:
-                from ..demo_assets import build_demo_assets
-
-                build_demo_assets(demo_alignment, image_size=512)
-            except Exception as exc:
-                self.statusBar().showMessage(f"Demo assets not generated: {exc}")
-                return
-        try:
-            self.set_alignment(demo_alignment)
-        except Exception as exc:
-            self.statusBar().showMessage(f"Demo assets not loaded: {exc}")
+        self.statusBar().showMessage("No alignment assets found. Install the package with its bundled public assets.")
 
     def set_vertex_table(self, path: Path) -> None:
         self.vertex_table = load_vertex_table(path)

@@ -247,7 +247,7 @@ def build_alignment_assets(
     if not smpl_path:
         report["message"] = (
             "No SMPL .pkl found. Place an official SMPL Python model under assets/raw/smpl/, "
-            "run smpl-install-local-assets, or use smpl-make-demo-assets for UI-only demo mode."
+            "run smpl-install-local-assets, or use the bundled assets/demo_reference/public demo for UI-only mode."
         )
         write_json(output_dir / "alignment_report.json", report)
         return report

@@ -1,7 +1,764 @@
 {
-  "status": "demo_reference",
-  "message": "Generated a license-safe synthetic mannequin for UI demos. It is not an official SMPL/DensePose alignment.",
+  "status": "makehuman_cc0_smpl_projected_demo",
+  "message": "Public demo bundle using a MakeHuman CC0 target mesh with smpl_27554 vertex placement projected from a local reference alignment. Generation code and local source alignment are not included.",
   "vertex_count": 27554,
+  "source_alignment": "local smpl_27554 reference alignment (not redistributed)",
+  "target_mesh": "MakeHuman female_generic proxy mesh (CC0-1.0)",
+  "target_mesh_meta": {
+    "url": "https://raw.githubusercontent.com/makehumancommunity/makehuman-assets/master/base/proxymeshes/female_generic/female_generic.obj",
+    "license": "CC0-1.0",
+    "source": "makehumancommunity/makehuman-assets base/proxymeshes/female_generic",
+    "name": "female_generic"
+  },
+  "projection_method": "body_part_bbox_align_then_open3d_closest_surface",
+  "alignment_info": {
+    "source_counts": {
+      "head": 7875,
+      "torso": 5826,
+      "left_upper_arm": 1027,
+      "right_upper_arm": 1020,
+      "left_lower_arm": 1537,
+      "right_lower_arm": 1548,
+      "left_hand": 1972,
+      "right_hand": 1965,
+      "left_upper_leg": 920,
+      "right_upper_leg": 893,
+      "left_lower_leg": 1484,
+      "right_lower_leg": 1487
+    },
+    "target_vertex_counts": {
+      "head": 5424,
+      "torso": 1728,
+      "left_upper_arm": 436,
+      "right_upper_arm": 436,
+      "left_lower_arm": 1249,
+      "right_lower_arm": 1249,
+      "left_hand": 800,
+      "right_hand": 800,
+      "left_upper_leg": 451,
+      "right_upper_leg": 451,
+      "left_lower_leg": 1556,
+      "right_lower_leg": 1556
+    },
+    "target_face_counts": {
+      "head": 9472,
+      "torso": 3112,
+      "left_upper_arm": 810,
+      "right_upper_arm": 810,
+      "left_lower_arm": 2102,
+      "right_lower_arm": 2102,
+      "left_hand": 1368,
+      "right_hand": 1368,
+      "left_upper_leg": 798,
+      "right_upper_leg": 798,
+      "left_lower_leg": 2492,
+      "right_lower_leg": 2492
+    },
+    "part_alignment": {
+      "head": {
+        "mode": "part_faces",
+        "query_count": 7875,
+        "target_vertex_count": 5424,
+        "target_face_count": 9472,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              -0.3012157380580902,
+              0.18358945846557617,
+              -0.12391812354326248
+            ],
+            "max": [
+              0.30325642228126526,
+              0.5776103138923645,
+              0.14677198231220245
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              -1.7798000574111938,
+              4.6631999015808105,
+              -0.6172000169754028
+            ],
+            "max": [
+              1.7798000574111938,
+              7.864299774169922,
+              1.5896999835968018
+            ]
+          },
+          "axis_scales": [
+            5.888774394989014,
+            8.124189376831055,
+            8.152865409851074
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.12358812242746353,
+        "distance_p95": 0.27695372700691223,
+        "distance_max": 0.49142885208129883
+      },
+      "torso": {
+        "mode": "part_faces",
+        "query_count": 5826,
+        "target_vertex_count": 1728,
+        "target_face_count": 3112,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              -0.30034562945365906,
+              -0.4432908296585083,
+              -0.1279323697090149
+            ],
+            "max": [
+              0.30265000462532043,
+              0.1835581660270691,
+              0.1744341403245926
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              -1.7621999979019165,
+              -0.7972999811172485,
+              -0.9232000112533569
+            ],
+            "max": [
+              1.7621999979019165,
+              4.647299766540527,
+              1.5997999906539917
+            ]
+          },
+          "axis_scales": [
+            5.844818592071533,
+            8.685664176940918,
+            8.344178199768066
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.2178114801645279,
+        "distance_p95": 0.46926313638687134,
+        "distance_max": 0.7860533595085144
+      },
+      "left_upper_arm": {
+        "mode": "part_faces",
+        "query_count": 1027,
+        "target_vertex_count": 436,
+        "target_face_count": 810,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.15148283541202545,
+              -0.05203338339924812,
+              -0.046582385897636414
+            ],
+            "max": [
+              0.1484237015247345,
+              0.05401056632399559,
+              0.05099185183644295
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -1.9288386106491089,
+              -0.4698338508605957,
+              -0.4389011859893799
+            ],
+            "max": [
+              1.7990583181381226,
+              0.8306148648262024,
+              0.3776252269744873
+            ]
+          },
+          "axis_scales": [
+            12.430194854736328,
+            12.263298988342285,
+            8.368258476257324
+          ],
+          "source_basis": [
+            [
+              -0.9960187077522278,
+              0.06456468999385834,
+              -0.061466287821531296
+            ],
+            [
+              0.02052263543009758,
+              0.8370702862739563,
+              0.5467103719711304
+            ],
+            [
+              0.08674979954957962,
+              0.5432723164558411,
+              -0.8350627422332764
+            ]
+          ],
+          "target_basis": [
+            [
+              -0.6194300651550293,
+              -0.7653301358222961,
+              0.17486028373241425
+            ],
+            [
+              -0.18132229149341583,
+              0.3561895191669464,
+              0.916652262210846
+            ],
+            [
+              -0.763824999332428,
+              0.536095917224884,
+              -0.35940590500831604
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.14559662342071533,
+        "distance_p95": 0.4120415151119232,
+        "distance_max": 0.5987570881843567
+      },
+      "right_upper_arm": {
+        "mode": "part_faces",
+        "query_count": 1020,
+        "target_vertex_count": 436,
+        "target_face_count": 810,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.15012535452842712,
+              -0.053044479340314865,
+              -0.04983200877904892
+            ],
+            "max": [
+              0.15128549933433533,
+              0.054363712668418884,
+              0.04533472657203674
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -1.9288386106491089,
+              -0.4698338508605957,
+              -0.3776252269744873
+            ],
+            "max": [
+              1.7990583181381226,
+              0.8306148648262024,
+              0.4389011859893799
+            ]
+          },
+          "axis_scales": [
+            12.368157386779785,
+            12.107536315917969,
+            8.5799560546875
+          ],
+          "source_basis": [
+            [
+              0.9959173798561096,
+              0.07086467742919922,
+              -0.05591769888997078
+            ],
+            [
+              -0.03043977916240692,
+              0.8468112945556641,
+              0.5310215950012207
+            ],
+            [
+              0.08498241752386093,
+              -0.5271515250205994,
+              0.845511257648468
+            ]
+          ],
+          "target_basis": [
+            [
+              0.6194300651550293,
+              -0.7653301358222961,
+              0.17486028373241425
+            ],
+            [
+              0.18132229149341583,
+              0.3561895191669464,
+              0.916652262210846
+            ],
+            [
+              -0.763824999332428,
+              -0.536095917224884,
+              0.35940590500831604
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.14317560195922852,
+        "distance_p95": 0.4127877950668335,
+        "distance_max": 0.6178475022315979
+      },
+      "left_lower_arm": {
+        "mode": "part_faces",
+        "query_count": 1537,
+        "target_vertex_count": 1249,
+        "target_face_count": 2102,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.1564871221780777,
+              -0.07082370668649673,
+              -0.031528472900390625
+            ],
+            "max": [
+              0.08888867497444153,
+              0.08459357917308807,
+              0.04281754419207573
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -1.9651156663894653,
+              -0.6305301189422607,
+              -0.2728104293346405
+            ],
+            "max": [
+              0.7956311702728271,
+              0.5879369974136353,
+              0.2934826910495758
+            ]
+          },
+          "axis_scales": [
+            11.251097679138184,
+            7.83997106552124,
+            7.616992950439453
+          ],
+          "source_basis": [
+            [
+              -0.9661951065063477,
+              -0.11758594214916229,
+              0.2294352650642395
+            ],
+            [
+              -0.23964619636535645,
+              0.08148347586393356,
+              -0.9674348831176758
+            ],
+            [
+              0.09506156295537949,
+              -0.9897140860557556,
+              -0.10690795630216599
+            ]
+          ],
+          "target_basis": [
+            [
+              -0.28150632977485657,
+              -0.5188544988632202,
+              0.8071828484535217
+            ],
+            [
+              -0.8020099401473999,
+              -0.3346104621887207,
+              -0.49478879570961
+            ],
+            [
+              0.5268152356147766,
+              -0.7866548895835876,
+              -0.32193151116371155
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.08895882219076157,
+        "distance_p95": 0.34395831823349,
+        "distance_max": 0.4649589955806732
+      },
+      "right_lower_arm": {
+        "mode": "part_faces",
+        "query_count": 1548,
+        "target_vertex_count": 1249,
+        "target_face_count": 2102,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.1527060717344284,
+              -0.07571142166852951,
+              -0.04180807247757912
+            ],
+            "max": [
+              0.08187929540872574,
+              0.07996410131454468,
+              0.03201882541179657
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -1.9651156663894653,
+              -0.5879369974136353,
+              -0.2728104293346405
+            ],
+            "max": [
+              0.7956311702728271,
+              0.6305301189422607,
+              0.2934826910495758
+            ]
+          },
+          "axis_scales": [
+            11.768623352050781,
+            7.826966285705566,
+            7.670553207397461
+          ],
+          "source_basis": [
+            [
+              0.985285758972168,
+              -0.09075836837291718,
+              0.14482715725898743
+            ],
+            [
+              0.14912612736225128,
+              0.04249101132154465,
+              -0.9879047870635986
+            ],
+            [
+              0.08350678533315659,
+              0.9949660897254944,
+              0.05540023744106293
+            ]
+          ],
+          "target_basis": [
+            [
+              0.28150632977485657,
+              -0.5188544988632202,
+              0.8071828484535217
+            ],
+            [
+              -0.8020099401473999,
+              0.3346104621887207,
+              0.49478879570961
+            ],
+            [
+              -0.5268152356147766,
+              -0.7866548895835876,
+              -0.32193151116371155
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.12092598527669907,
+        "distance_p95": 0.2710133194923401,
+        "distance_max": 0.39906367659568787
+      },
+      "left_hand": {
+        "mode": "part_faces",
+        "query_count": 1972,
+        "target_vertex_count": 800,
+        "target_face_count": 1368,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.06556711345911026,
+              -0.053001247346401215,
+              -0.021388687193393707
+            ],
+            "max": [
+              0.11123991012573242,
+              0.05257577821612358,
+              0.022151906043291092
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -3.8461782932281494,
+              -0.3937249481678009,
+              -0.47318387031555176
+            ],
+            "max": [
+              0.29673096537590027,
+              0.8898556232452393,
+              0.4565732777118683
+            ]
+          },
+          "axis_scales": [
+            23.431814193725586,
+            12.157764434814453,
+            21.35379981994629
+          ],
+          "source_basis": [
+            [
+              -0.047411635518074036,
+              0.0023550917394459248,
+              0.9988726377487183
+            ],
+            [
+              0.9950210452079773,
+              -0.08765257894992828,
+              0.04743548110127449
+            ],
+            [
+              0.08766548335552216,
+              0.9961483478546143,
+              0.0018123864429071546
+            ]
+          ],
+          "target_basis": [
+            [
+              -0.6905999183654785,
+              0.2816963195800781,
+              0.666122317314148
+            ],
+            [
+              0.6553059220314026,
+              -0.14598645269870758,
+              0.7411222457885742
+            ],
+            [
+              0.3060162365436554,
+              0.9483328461647034,
+              -0.08377903699874878
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.9547926783561707,
+        "distance_p95": 1.6374858617782593,
+        "distance_max": 1.7792778015136719
+      },
+      "right_hand": {
+        "mode": "part_faces",
+        "query_count": 1965,
+        "target_vertex_count": 800,
+        "target_face_count": 1368,
+        "bbox_alignment": {
+          "source_local_bounds": {
+            "min": [
+              -0.06692805886268616,
+              -0.047631606459617615,
+              -0.017209265381097794
+            ],
+            "max": [
+              0.10733477771282196,
+              0.05384678393602371,
+              0.02064324915409088
+            ]
+          },
+          "target_local_bounds": {
+            "min": [
+              -3.8461782932281494,
+              -0.3937249481678009,
+              -0.4565732777118683
+            ],
+            "max": [
+              0.29673096537590027,
+              0.8898556232452393,
+              0.47318387031555176
+            ]
+          },
+          "axis_scales": [
+            23.773910522460938,
+            12.64880657196045,
+            24.562625885009766
+          ],
+          "source_basis": [
+            [
+              0.023031622171401978,
+              0.0035405985545367002,
+              0.9997284412384033
+            ],
+            [
+              0.9990014433860779,
+              0.03821294382214546,
+              -0.023150207474827766
+            ],
+            [
+              -0.038284532725811005,
+              0.999263346195221,
+              -0.0026569569017738104
+            ]
+          ],
+          "target_basis": [
+            [
+              0.6905999183654785,
+              0.2816963195800781,
+              0.666122317314148
+            ],
+            [
+              -0.6553059220314026,
+              -0.14598645269870758,
+              0.7411222457885742
+            ],
+            [
+              0.3060162365436554,
+              -0.9483328461647034,
+              0.08377903699874878
+            ]
+          ],
+          "method": "pca_bbox_anisotropic"
+        },
+        "distance_mean": 0.9786790013313293,
+        "distance_p95": 1.5721315145492554,
+        "distance_max": 1.8290233612060547
+      },
+      "left_upper_leg": {
+        "mode": "part_faces",
+        "query_count": 920,
+        "target_vertex_count": 451,
+        "target_face_count": 798,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              -0.18264003098011017,
+              -0.8433260321617126,
+              -0.08920089155435562
+            ],
+            "max": [
+              0.0006748996675014496,
+              -0.4437137246131897,
+              0.1253540962934494
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              -2.0332999229431152,
+              -4.632999897003174,
+              -0.4593999981880188
+            ],
+            "max": [
+              -0.06949999928474426,
+              -0.8084999918937683,
+              1.3592000007629395
+            ]
+          },
+          "axis_scales": [
+            10.712711334228516,
+            9.570526123046875,
+            8.47614860534668
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.11808909475803375,
+        "distance_p95": 0.32601118087768555,
+        "distance_max": 0.4975754916667938
+      },
+      "right_upper_leg": {
+        "mode": "part_faces",
+        "query_count": 893,
+        "target_vertex_count": 451,
+        "target_face_count": 798,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              0.0012802513083443046,
+              -0.8416209816932678,
+              -0.0849071815609932
+            ],
+            "max": [
+              0.17627187073230743,
+              -0.44352400302886963,
+              0.13185350596904755
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              0.06949999928474426,
+              -4.632999897003174,
+              -0.4593999981880188
+            ],
+            "max": [
+              2.0332999229431152,
+              -0.8084999918937683,
+              1.3592000007629395
+            ]
+          },
+          "axis_scales": [
+            11.222250938415527,
+            9.606955528259277,
+            8.389897346496582
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.13074329495429993,
+        "distance_p95": 0.34626710414886475,
+        "distance_max": 0.5234148502349854
+      },
+      "left_lower_leg": {
+        "mode": "part_faces",
+        "query_count": 1484,
+        "target_vertex_count": 1556,
+        "target_face_count": 2492,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              -0.1679878979921341,
+              -1.2135130167007446,
+              -0.09087536484003067
+            ],
+            "max": [
+              -0.04330551624298096,
+              -0.8446155190467834,
+              0.17947541177272797
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              -2.192699909210205,
+              -8.189900398254395,
+              -0.3912000060081482
+            ],
+            "max": [
+              -1.0247999429702759,
+              -4.648499965667725,
+              2.001199960708618
+            ]
+          },
+          "axis_scales": [
+            9.367000579833984,
+            9.599957466125488,
+            8.849244117736816
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.0792066678404808,
+        "distance_p95": 0.24278205633163452,
+        "distance_max": 0.3589184582233429
+      },
+      "right_lower_leg": {
+        "mode": "part_faces",
+        "query_count": 1487,
+        "target_vertex_count": 1556,
+        "target_face_count": 2492,
+        "bbox_alignment": {
+          "source_bounds": {
+            "min": [
+              0.03917578235268593,
+              -1.2098777294158936,
+              -0.08656935393810272
+            ],
+            "max": [
+              0.16528984904289246,
+              -0.8423041105270386,
+              0.1805231273174286
+            ]
+          },
+          "target_bounds": {
+            "min": [
+              1.0247999429702759,
+              -8.189900398254395,
+              -0.3912000060081482
+            ],
+            "max": [
+              2.192699909210205,
+              -4.648499965667725,
+              2.001199960708618
+            ]
+          },
+          "axis_scales": [
+            9.260663032531738,
+            9.634533882141113,
+            8.957198143005371
+          ],
+          "method": "bbox_anisotropic_xyz"
+        },
+        "distance_mean": 0.0790574923157692,
+        "distance_p95": 0.24621431529521942,
+        "distance_max": 0.34618255496025085
+      }
+    }
+  },
+  "distance_stats": {
+    "mean": 0.25869813561439514,
+    "median": 0.13622093200683594,
+    "p95": 1.261794090270996,
+    "max": 1.8290233612060547
+  },
   "surface_proxy_obj": "assets/demo_reference/public/surface_proxy.obj",
   "smpl_27554_surface_points_obj": "assets/demo_reference/public/smpl_27554_surface_points.obj",
   "mapping_npz": "assets/demo_reference/public/smpl_27554_to_surface_map.npz",
@@ -11,25 +768,25 @@
       "view": "front",
       "image": "assets/demo_reference/public/tri_views/front.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/front.vertex_id_map.npz",
-      "valid_pixels": 117130
+      "valid_pixels": 91454
     },
     {
       "view": "back",
       "image": "assets/demo_reference/public/tri_views/back.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/back.vertex_id_map.npz",
-      "valid_pixels": 117130
+      "valid_pixels": 91454
     },
     {
       "view": "left",
       "image": "assets/demo_reference/public/tri_views/left.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/left.vertex_id_map.npz",
-      "valid_pixels": 50243
+      "valid_pixels": 52799
     },
     {
       "view": "right",
       "image": "assets/demo_reference/public/tri_views/right.png",
       "vertex_id_map": "assets/demo_reference/public/tri_views/right.vertex_id_map.npz",
-      "valid_pixels": 50243
+      "valid_pixels": 52799
     }
   ],
   "view_specs": {
@@ -70,6 +827,7 @@
       "depth_sign": 1.0
     }
   },
-  "asset_class": "open_source_safe_demo",
-  "license": "Generated by this tool for repository demos; no SMPL model, DensePose raw asset, or private dataset image is included."
+  "asset_class": "makehuman_cc0_projected_demo",
+  "license_note": "The MakeHuman target mesh is CC0, but the projected vertex-id placement is derived from the local source alignment. Do not commit this generated alignment unless that source is redistributable.",
+  "license": "MakeHuman target mesh is CC0-1.0. This repository includes only the public demo mesh, point map, and tri-view maps; no SMPL model files, DensePose raw assets, generation code, AI-generated people images, or private dataset images are included."
 }

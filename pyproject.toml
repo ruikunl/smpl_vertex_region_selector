@@ -45,8 +45,6 @@ smpl-region-selector = "smpl_vertex_region_selector.app.main:main"
 smpl-export-surface-preannotation = "smpl_vertex_region_selector.export_for_surface_body_preannotation:main"
 smpl-fetch-public-examples = "smpl_vertex_region_selector.fetch_public_examples:main"
 smpl-make-demo-data = "smpl_vertex_region_selector.demo_data:main"
-smpl-make-demo-assets = "smpl_vertex_region_selector.demo_assets:main"
-smpl-project-alignment-to-mesh = "smpl_vertex_region_selector.project_alignment_to_mesh:main"
 smpl-install-local-assets = "smpl_vertex_region_selector.install_local_assets:main"
 smpl-build-alignment = "smpl_vertex_region_selector.alignment.builder:main"
 

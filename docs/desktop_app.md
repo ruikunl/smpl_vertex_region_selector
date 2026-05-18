@@ -30,7 +30,7 @@ smpl-region-selector
 打开指定 alignment/demo 目录：
 
 ```bash
-smpl-region-selector --alignment-dir assets/demo_reference/generated/makehuman_smpl_projected
+smpl-region-selector --alignment-dir assets/demo_reference/public
 ```
 
 交互：
@@ -67,11 +67,12 @@ front/back/left/right 的 2D template reference PNG 可能带 ribs/pelvis/navel 
 - `aligned_mesh`：mesh 顶点数等于 27,554，可以视为 `smpl_27554` 对齐候选。
 - `visual_reference`：mesh 顶点数不是 27,554，只能做视觉参考，不会导出 mesh-local vertex id。
 - `point_cloud_only`：未加载 mesh，只显示 `smpl_27554` 点云。
-- `demo_reference`：开源安全的合成 mannequin，用来学习选择/导出流程，不是 DensePose 精确映射。
+- `makehuman_cc0_smpl_projected_demo`：MakeHuman CC0 public demo，用来学习选择/导出流程，不是官方
+  DensePose 精确映射。
 - `surface_proxy_aligned`：已加载由 SMPL/DensePose 构建的 surface proxy 和三视图映射。
 
 三视图里的彩色人体只是视觉 reference；点击/框选实际读取同尺寸 `vertex_id_map.npz`。如果以后接入
-AI 生成正面/侧面/背面图，也必须保持这条规则。
+外部正面/侧面/背面参考图，也必须保持这条规则。
 
 ## English
 
@@ -103,5 +104,5 @@ The current guides use a simple anthropometry-inspired heuristic: lower
 rib/costal margin, iliac crest, and the midpoint between them.
 
 When official alignment assets are absent, the app loads the committed
-`demo_reference` public demo assets. That mode is for learning the UI and export
+MakeHuman CC0 public demo assets. That mode is for learning the UI and export
 formats, not for DensePose-quality anatomical labeling.

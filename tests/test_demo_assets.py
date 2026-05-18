@@ -7,30 +7,12 @@ from pathlib import Path
 import numpy as np
 
 from smpl_vertex_region_selector.alignment.assets import load_alignment_assets
-from smpl_vertex_region_selector.demo_assets import build_demo_assets
 from smpl_vertex_region_selector.schema import VERTEX_COUNT
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class DemoAssetsTest(unittest.TestCase):
-    def test_demo_assets_generate_alignment_compatible_bundle(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            out = Path(tmp) / "demo"
-            report = build_demo_assets(out, image_size=96)
-            self.assertEqual(report["status"], "demo_reference")
-            mapping = np.load(out / "smpl_27554_to_surface_map.npz")
-            self.assertEqual(mapping["surface_points"].shape, (VERTEX_COUNT, 3))
-            self.assertEqual(mapping["vertex_id"].shape, (VERTEX_COUNT,))
-            self.assertTrue((out / "surface_proxy.obj").exists())
-            self.assertTrue((out / "tri_views" / "front.png").exists())
-            id_map = np.load(out / "tri_views" / "front.vertex_id_map.npz")["vertex_id_map"]
-            self.assertEqual(id_map.shape, (96, 96))
-            valid = id_map[id_map >= 0]
-            self.assertGreater(valid.size, 0)
-            self.assertGreaterEqual(int(valid.min()), 0)
-            self.assertLess(int(valid.max()), VERTEX_COUNT)
-
     def test_public_demo_assets_are_bundled_and_alignment_compatible(self):
         public = ROOT / "assets" / "demo_reference" / "public"
         required = [
@@ -45,11 +27,13 @@ class DemoAssetsTest(unittest.TestCase):
             self.assertTrue((public / name).exists(), f"missing public demo asset {name}")
 
         report = json.loads((public / "alignment_report.json").read_text(encoding="utf-8"))
-        self.assertEqual(report["status"], "demo_reference")
-        self.assertEqual(report.get("asset_class"), "open_source_safe_demo")
+        self.assertEqual(report["status"], "makehuman_cc0_smpl_projected_demo")
+        self.assertEqual(report.get("asset_class"), "makehuman_cc0_projected_demo")
+        self.assertIn("MakeHuman", report.get("license", ""))
         self.assertIn("no SMPL model", report.get("license", ""))
         self.assertIn("DensePose raw asset", report.get("license", ""))
         self.assertIn("private dataset image", report.get("license", ""))
+        self.assertEqual(report.get("target_mesh"), "MakeHuman female_generic proxy mesh (CC0-1.0)")
 
         vertex_csv = public / "vertex_template_points.csv"
         with vertex_csv.open("r", encoding="utf-8") as handle:
@@ -62,9 +46,10 @@ class DemoAssetsTest(unittest.TestCase):
         self.assertEqual(len(set(ids)), VERTEX_COUNT)
 
         assets = load_alignment_assets(public)
-        self.assertEqual(assets.status, "demo_reference")
+        self.assertEqual(assets.status, "makehuman_cc0_smpl_projected_demo")
         self.assertEqual(assets.vertex_ids.shape, (VERTEX_COUNT,))
         self.assertEqual(assets.surface_points.shape, (VERTEX_COUNT, 3))
+        self.assertGreater(sum(1 for line in (public / "surface_proxy.obj").read_text(encoding="utf-8").splitlines() if line.startswith("v ")), 10000)
         for view in ("front", "back", "left", "right"):
             self.assertIn(view, assets.tri_views)
             tri = assets.tri_views[view]
@@ -84,7 +69,7 @@ class DemoAssetsTest(unittest.TestCase):
             os.chdir(tmp)
             try:
                 assets = load_alignment_assets(public)
-                self.assertEqual(assets.status, "demo_reference")
+                self.assertEqual(assets.status, "makehuman_cc0_smpl_projected_demo")
                 self.assertIn("front", assets.tri_views)
             finally:
                 os.chdir(old_cwd)

@@ -31,7 +31,7 @@ The builder first tries DensePose `SMPL_subdiv.mat` plus
 `SMPL_SUBDIV_TRANSFORM.mat`, stored under ignored `assets/raw/densepose/`. That
 path gives one 3D surface point for every `smpl_27554` vertex id.
 
-Fresh clones already include a license-safe public demo bundle:
+Fresh clones already include a MakeHuman CC0 public demo bundle:
 
 ```text
 assets/demo_reference/public/
@@ -48,34 +48,11 @@ The GUI loads assets in this order:
 
 1. `assets/processed/alignment/` if you have built local DensePose/SMPL assets.
 2. `assets/demo_reference/public/` from the repository.
-3. `assets/demo_reference/generated/` as an ignored local fallback.
+3. `assets/demo_reference/generated/` as an optional ignored local fallback.
 
-To regenerate local demo assets without changing committed files:
-
-```bash
-smpl-make-demo-assets --output-dir assets/demo_reference/generated
-```
-
-Maintainers can refresh the committed public demo with:
-
-```bash
-smpl-make-demo-assets --output-dir assets/demo_reference/public
-```
-
-For a nicer local preview, project the local `smpl_27554` alignment onto a
-MakeHuman CC0 target mesh:
-
-```bash
-smpl-project-alignment-to-mesh \
-  --target-mesh makehuman:female_generic \
-  --source-alignment assets/processed/alignment/smpl_27554_to_surface_map.npz \
-  --output-dir assets/demo_reference/generated/makehuman_smpl_projected
-```
-
-This keeps vertex IDs from the source alignment and moves their display points
-onto the target mesh surface. The MakeHuman mesh is CC0, but the projected
-placement is derived from local alignment data, so the default output stays
-ignored.
+The committed public bundle uses a MakeHuman CC0 target mesh plus `smpl_27554`
+vertex placement prepared for this repository. The generation code and local
+source alignment are not included in the public package.
 
 ## Optional
 
