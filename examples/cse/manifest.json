@@ -1,0 +1,41 @@
+{
+  "sample_set": "examples",
+  "created_at": "20260517T134029Z",
+  "image_root": "smpl_vertex_region_selector/examples/images",
+  "images": [
+    {
+      "file_name": "adult_clothed_full_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_clothed_full_body.png",
+      "category": "example_full_body"
+    },
+    {
+      "file_name": "adult_clothed_half_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_clothed_half_body.png",
+      "category": "example_half_body"
+    },
+    {
+      "file_name": "adult_female_sportswear_full_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_female_sportswear_full_body.png",
+      "category": "example_full_body"
+    },
+    {
+      "file_name": "adult_female_sportswear_half_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_female_sportswear_half_body.png",
+      "category": "example_half_body"
+    },
+    {
+      "file_name": "adult_male_shirtless_full_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_male_shirtless_full_body.png",
+      "category": "example_full_body"
+    },
+    {
+      "file_name": "adult_male_shirtless_half_body.png",
+      "path": "smpl_vertex_region_selector/examples/images/adult_male_shirtless_half_body.png",
+      "category": "example_half_body"
+    }
+  ],
+  "notes": [
+    "Generated for smpl_vertex_region_selector examples.",
+    "This manifest is compatible with algorithm/tasks/surface_body_preannotation/main.py run --manifest."
+  ]
+}

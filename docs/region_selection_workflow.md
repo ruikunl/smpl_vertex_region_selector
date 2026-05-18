@@ -25,8 +25,8 @@
 
 - 用 `examples/region_map.example.json` 熟悉导出 schema。
 - 直接启动 GUI 使用仓库内置的 `assets/demo_reference/public/` license-safe demo reference。
-- 使用你自己的 CSE `vertex_map.npz` 体验 CSE inspector：加载 map 后所有有效 vertex 会默认高亮，
-  再加载同尺寸原图检查 2D/3D 映射。
+- 用 `examples/cse/vertex_maps/*.vertex_map.npz` 和 `examples/images/*.png` 体验 CSE inspector：
+  加载 map 后所有有效 vertex 会默认高亮，再加载同名图片检查 2D/3D 映射。
 - 需要更多图片 QA 时，用 `smpl-fetch-public-examples` 下载公开样例到 ignored 的
   `assets/public_examples/`，再用本地 CSE pipeline 生成匹配的 `vertex_map.npz`。
 - GUI 中先 `Load CSE Map`，再 `Load CSE Image`，最后用 selection 工具或 `Load Mask/Points`
@@ -39,9 +39,9 @@ template region map is a reusable prior, not a perfect semantic segmentation by
 itself. For production preannotation, combine it with parsing, occlusion, and
 quality-control rules.
 
-Use `examples/region_map.example.json` as a small schema reference and your own
-CSE `vertex_map.npz` files to try the CSE inspector. In the desktop app, loading
-a CSE map highlights all valid vertices by default so you can inspect coverage
-before committing IDs with `Add Selected`. The ribs, pelvis, and navel guide
-lines in 2D template references are visual aids only; they are not model outputs
-or export data.
+Use `examples/region_map.example.json` as a small schema reference and the
+bundled `examples/images/` plus `examples/cse/` files to try the CSE inspector.
+In the desktop app, loading a CSE map highlights all valid vertices by default
+so you can inspect coverage before committing IDs with `Add Selected`. The ribs,
+pelvis, and navel guide lines in 2D template references are visual aids only;
+they are not model outputs or export data.

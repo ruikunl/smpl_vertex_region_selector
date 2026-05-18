@@ -27,6 +27,10 @@ Public demo tri-view reference:
 
 ![public demo front](assets/demo_reference/public/tri_views/front.png)
 
+Bundled CSE examples:
+
+![CSE examples](examples/cse/cse_contact_sheet.jpg)
+
 ## Install
 
 推荐安装桌面软件完整依赖：
@@ -105,10 +109,15 @@ region_map.csv
 vertex_ids/<region>.txt
 ```
 
-## Try the Bundled Example
+## Try the Bundled Examples
 
 ```text
 assets/demo_reference/public/
+examples/images/*.png
+examples/cse/vertex_maps/*.vertex_map.npz
+examples/cse/overlays/*.cse_vertex_overlay.jpg
+examples/cse/masks/*.foreground.png
+examples/cse/cse_contact_sheet.jpg
 examples/region_map.example.json
 ```
 
@@ -117,11 +126,26 @@ Basic flow:
 1. Run `smpl-region-selector`.
 2. Import `examples/region_map.example.json`, or create a new region manually.
 3. Use the MakeHuman CC0 public demo 3D/2D views to select vertices.
-4. Click `Add Selected`.
-5. Export your region bundle.
+4. Use `Load CSE Map` with one file from `examples/cse/vertex_maps/`.
+5. Use `Load CSE Image` with the matching image from `examples/images/`.
+6. Refine the highlighted selection with box/polygon tools or a mask.
+7. Click `Add Selected`.
+8. Export your region bundle.
 
-The CSE/Image inspector still supports user-provided `.npz/.npy` vertex maps, source images, masks, and point CSVs.
-This repository no longer bundles AI-generated people images or precomputed CSE outputs.
+The bundled images are AI-generated adult examples. The CSE outputs were generated on a local CUDA machine and are
+included only as lightweight `.vertex_map.npz`, overlay, mask, manifest, and summary files.
+
+Render an overlay preview:
+
+```bash
+smpl-preview-overlay \
+  --region-map outputs/manual_regions/region_map.json \
+  --vertex-map-dir examples/cse/vertex_maps \
+  --image-dir examples/images \
+  --output-dir outputs/region_preview \
+  --limit 12 \
+  --write-summary
+```
 
 ## What Is a CSE `vertex_map`?
 
@@ -176,7 +200,8 @@ Tracked public assets:
 
 - `assets/demo_reference/public/`: MakeHuman CC0 target mesh, `smpl_27554` point map, tri-view PNGs, and
   `vertex_id_map.npz`.
-- `examples/region_map.example.json`: a tiny region-map schema example.
+- `examples/`: AI-generated adult example images, lightweight CSE maps, masks, overlays, manifests, and a tiny
+  region-map schema example.
 
 Ignored local assets:
 
@@ -203,10 +228,10 @@ smpl-export-surface-preannotation     Convert region maps for a downstream prean
 ## Project Layout
 
 ```text
-assets/demo_reference/public/     Committed demo assets
+assets/demo_reference/public/     Committed MakeHuman male demo assets
 docs/                             Concept and workflow docs
-examples/                         Small region-map schema example
-scripts/                          Helper scripts
+examples/                         Small images and CSE outputs for trying the app
+scripts/                          Helper scripts for example manifests and CSE collection
 src/smpl_vertex_region_selector/  Python package
 tests/                            Unit and smoke tests
 ```
@@ -249,8 +274,8 @@ the public repository.
 
 Code is released under the MIT License. Public demo assets in `assets/demo_reference/public/` use a MakeHuman CC0
 target mesh plus `smpl_27554` vertex placement prepared for repository demos, and contain no SMPL model file,
-DensePose raw asset, AI-generated people image, or private dataset image. Third-party models and datasets keep their
-own licenses and should remain local unless you have explicit redistribution rights.
+DensePose raw asset, or private dataset image. Bundled people images are AI-generated adult examples. Third-party
+models and datasets keep their own licenses and should remain local unless you have explicit redistribution rights.
 
 ---
 
@@ -268,7 +293,7 @@ Highlights:
 - Typed or imported vertex ID sets.
 - CSE/Image inspector for `vertex_map.npz`, source images, masks, and point CSVs.
 - JSON/CSV/TXT region export.
-- MakeHuman CC0 public demo assets and lightweight examples.
+- MakeHuman CC0 public demo assets, AI-generated example images, and lightweight CSE outputs.
 
 Quick start:
 
@@ -294,6 +319,7 @@ You can also install the desktop stack with `python -m pip install -r requiremen
 
 For real annotation work, build local DensePose/SMPL alignment assets under ignored `assets/processed/alignment/`.
 This repository does not redistribute official SMPL files, DensePose checkpoints, raw DensePose geometry assets, or
-private/purchased datasets.
+private/purchased datasets. It does include AI-generated adult example images and lightweight CSE `.vertex_map.npz`
+outputs so users can try the inspector immediately.
 
 See the Chinese sections above and the `docs/` directory for the full workflow and asset policy.

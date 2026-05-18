@@ -15,6 +15,7 @@ region_preview/
 *.npz
 *.npy
 !assets/demo_reference/public/**
+!examples/cse/vertex_maps/*.vertex_map.npz
 
 # Python/cache noise.
 __pycache__/

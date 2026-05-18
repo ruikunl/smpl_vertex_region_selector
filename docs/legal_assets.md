@@ -4,7 +4,8 @@
 
 这个项目刻意把代码和资产分开：
 
-- 可以开源：Python 工具代码、MIT license、MakeHuman CC0 public demo bundle、公开数据集下载脚本。
+- 可以开源：Python 工具代码、MIT license、MakeHuman CC0 public demo bundle、AI 生成成人示例图、
+  轻量 CSE example 输出、公开数据集下载脚本。
 - 不随仓库分发：官方 SMPL Python 模型、DensePose 权重/数据资产、大型 mesh、用户自己的购买数据集图片。
 - 默认 ignored：`assets/raw/`、`assets/processed/`、`assets/demo_reference/generated/`、`outputs/`。
 - 可提交的默认 demo：`assets/demo_reference/public/`，它使用 MakeHuman CC0 target mesh 和
@@ -59,7 +60,7 @@ alignment 和生成代码不随仓库分发。
 
 三层资产规则：
 
-- `examples/`：轻量 region map example，可以直接试导入/导出。
+- `examples/`：AI 生成成人示例图、轻量 CSE 输出和 region map example，可以直接试 CSE inspector。
 - `assets/demo_reference/public/`：MakeHuman CC0 public demo mesh/reference，可以提交。
 - `assets/processed/alignment/`：用户本地生成的真实 DensePose/SMPL 对齐结果，继续 ignored。
 
@@ -68,7 +69,8 @@ alignment 和生成代码不随仓库分发。
 This repository separates code from licensed assets:
 
 - Open-source friendly: Python code, MIT license, the MakeHuman CC0 public demo
-  bundle, and public dataset download scripts.
+  bundle, AI-generated adult examples, lightweight CSE example outputs, and
+  public dataset download scripts.
 - Not redistributed: official SMPL Python models, DensePose checkpoints, large
   meshes, and private or purchased dataset images.
 - Ignored by default: `assets/raw/`, `assets/processed/`,
@@ -76,6 +78,9 @@ This repository separates code from licensed assets:
 - Committed demo assets: `assets/demo_reference/public/`, using a MakeHuman
   CC0 target mesh and `smpl_27554` vertex placement, without SMPL model files,
   DensePose raw assets, AI-generated people images, or private images.
+- Committed examples: `examples/images/` and `examples/cse/`, containing
+  AI-generated adult images and lightweight CSE maps/overlays/masks without raw
+  DensePose dumps, model weights, SMPL files, or private images.
 
 The official SMPL Python model should be downloaded from
 <https://smpl.is.tue.mpg.de/> after registration and license acceptance. It is
@@ -90,4 +95,5 @@ authoritative DensePose CSE alignment.
 
 The authoritative local workflow keeps SMPL files, DensePose raw data, and
 `assets/processed/alignment/` outputs out of git. The public workflow uses
-`examples/region_map.example.json` plus `assets/demo_reference/public/`.
+`examples/`, especially `examples/images/`, `examples/cse/`, and
+`examples/region_map.example.json`, plus `assets/demo_reference/public/`.
