@@ -33,13 +33,17 @@ Bundled CSE examples:
 
 ## Install
 
+推荐安装桌面软件完整依赖：
+
 ```bash
 git clone https://github.com/ruikunl/smpl_vertex_region_selector.git
 cd smpl_vertex_region_selector
 
-python3 -m venv .venv
+# Use Python 3.10+.
+python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[gui]"
+python -m pip install --upgrade pip
+python -m pip install -e ".[gui]"
 ```
 
 Launch the desktop app:
@@ -50,6 +54,33 @@ smpl-region-selector
 
 On a fresh clone, the app loads `assets/demo_reference/public/` automatically. If you build real local
 SMPL/DensePose alignment assets later, `assets/processed/alignment/` takes priority.
+
+依赖分组：
+
+- Core CLI: `python -m pip install -e .`
+  installs `numpy` and `Pillow` for region export, overlay preview, demo data, and asset checks.
+- Desktop GUI: `python -m pip install -e ".[gui]"`
+  adds `PySide6`, `Open3D`, `SciPy`, and `trimesh`.
+- Alignment only: `python -m pip install -e ".[alignment]"`
+  adds `SciPy` for local DensePose/SMPL alignment builders.
+- Development: `python -m pip install -e ".[gui,dev]"`
+  adds the GUI stack plus test tooling.
+- Everything: `python -m pip install -e ".[all]"`
+  installs GUI, alignment, and development dependencies together.
+
+如果你更习惯 `requirements.txt`：
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
+
+开发测试依赖也可以这样安装：
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pip install -e .
+```
 
 ## Desktop Workflow
 
@@ -222,12 +253,21 @@ tests/                            Unit and smoke tests
 ## Development
 
 ```bash
-python3 -m venv .venv
+# Use Python 3.10+.
+python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[gui,dev]"
+python -m pip install --upgrade pip
+python -m pip install -e ".[gui,dev]"
 
 python -m unittest discover -s tests -v
 QT_QPA_PLATFORM=offscreen smpl-region-selector --smoke-test
+```
+
+Equivalent requirements-file flow:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pip install -e .
 ```
 
 The test suite includes privacy and asset-boundary checks to keep private datasets and licensed model files out of
@@ -273,11 +313,22 @@ Quick start:
 ```bash
 git clone https://github.com/ruikunl/smpl_vertex_region_selector.git
 cd smpl_vertex_region_selector
-python3 -m venv .venv
+# Use Python 3.10+.
+python3.11 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[gui]"
+python -m pip install --upgrade pip
+python -m pip install -e ".[gui]"
 smpl-region-selector
 ```
+
+Dependency extras:
+
+- `.[gui]`: desktop app dependencies, including PySide6, Open3D, SciPy, and trimesh.
+- `.[alignment]`: local DensePose/SMPL alignment helpers.
+- `.[dev]`: test tooling.
+- `.[all]`: GUI, alignment, and development dependencies.
+
+You can also install the desktop stack with `python -m pip install -r requirements.txt`.
 
 For real annotation work, build local DensePose/SMPL alignment assets under ignored `assets/processed/alignment/`.
 This repository does not redistribute official SMPL files, DensePose checkpoints, raw DensePose geometry assets, or

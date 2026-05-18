@@ -7,7 +7,18 @@
 安装：
 
 ```bash
-pip install -e ".[gui]"
+# Use Python 3.10+.
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[gui]"
+```
+
+如果使用 requirements 文件：
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -e .
 ```
 
 运行：
