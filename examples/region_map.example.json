@@ -1,0 +1,16 @@
+{
+  "mesh_name": "smpl_27554",
+  "vertex_count": 27554,
+  "status": "example",
+  "created_by": "smpl_vertex_region_selector",
+  "region_sources": {
+    "abdomen_front": "example_manual_seed",
+    "lower_back": "example_manual_seed"
+  },
+  "regions": {
+    "abdomen_front": [101, 102, 103, 104],
+    "lower_back": [201, 202, 203, 204],
+    "left_upper_leg": [],
+    "right_upper_leg": []
+  }
+}

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smpl-vertex-region-selector"
+version = "0.1.0"
+description = "Interactive tools for selecting DensePose CSE smpl_27554 vertex regions."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "smpl_vertex_region_selector contributors"}
+]
+dependencies = [
+  "numpy>=1.23",
+  "pillow>=9.5"
+]
+
+[project.optional-dependencies]
+alignment = [
+  "scipy>=1.10"
+]
+gui = [
+  "PySide6>=6.5",
+  "open3d>=0.18",
+  "scipy>=1.10",
+  "trimesh>=4.0"
+]
+dev = [
+  "pytest>=7.0"
+]
+
+[project.scripts]
+smpl-prepare-assets = "smpl_vertex_region_selector.prepare_assets:main"
+smpl-preview-overlay = "smpl_vertex_region_selector.preview_overlay:main"
+smpl-region-selector = "smpl_vertex_region_selector.app.main:main"
+smpl-export-surface-preannotation = "smpl_vertex_region_selector.export_for_surface_body_preannotation:main"
+smpl-fetch-public-examples = "smpl_vertex_region_selector.fetch_public_examples:main"
+smpl-make-demo-data = "smpl_vertex_region_selector.demo_data:main"
+smpl-make-demo-assets = "smpl_vertex_region_selector.demo_assets:main"
+smpl-project-alignment-to-mesh = "smpl_vertex_region_selector.project_alignment_to_mesh:main"
+smpl-install-local-assets = "smpl_vertex_region_selector.install_local_assets:main"
+smpl-build-alignment = "smpl_vertex_region_selector.alignment.builder:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

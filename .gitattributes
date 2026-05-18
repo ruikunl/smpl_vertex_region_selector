@@ -1,0 +1,11 @@
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.npz binary
+*.npy binary
+*.obj text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf

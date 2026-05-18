@@ -1,0 +1,30 @@
+# Local DensePose/SMPL assets and large outputs.
+assets/raw/
+assets/processed/
+assets/demo_reference/generated/
+assets/public_examples/
+outputs/
+region_preview/
+*.blend
+*.blend1
+*.fbx
+*.glb
+*.gltf
+*.obj
+*.ply
+*.npz
+*.npy
+!assets/demo_reference/public/**
+!examples/cse/vertex_maps/*.vertex_map.npz
+
+# Python/cache noise.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# macOS
+.DS_Store

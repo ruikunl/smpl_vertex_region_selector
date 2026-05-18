@@ -1,0 +1,5 @@
+numpy>=1.23
+pillow>=9.5
+
+# Optional desktop GUI dependencies:
+# pip install -e ".[gui]"

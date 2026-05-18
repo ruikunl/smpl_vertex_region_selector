@@ -1,0 +1,29 @@
+{
+  "status": "demo_reference",
+  "tri_views": [
+    {
+      "view": "front",
+      "image": "assets/demo_reference/public/tri_views/front.png",
+      "vertex_id_map": "assets/demo_reference/public/tri_views/front.vertex_id_map.npz",
+      "valid_pixels": 117130
+    },
+    {
+      "view": "back",
+      "image": "assets/demo_reference/public/tri_views/back.png",
+      "vertex_id_map": "assets/demo_reference/public/tri_views/back.vertex_id_map.npz",
+      "valid_pixels": 117130
+    },
+    {
+      "view": "left",
+      "image": "assets/demo_reference/public/tri_views/left.png",
+      "vertex_id_map": "assets/demo_reference/public/tri_views/left.vertex_id_map.npz",
+      "valid_pixels": 50243
+    },
+    {
+      "view": "right",
+      "image": "assets/demo_reference/public/tri_views/right.png",
+      "vertex_id_map": "assets/demo_reference/public/tri_views/right.vertex_id_map.npz",
+      "valid_pixels": 50243
+    }
+  ]
+}
